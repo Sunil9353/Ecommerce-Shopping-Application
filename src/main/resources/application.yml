@@ -1,0 +1,40 @@
+spring:
+#jdbc driver Configuration
+  datasource:
+    url: jdbc:mysql://localhost:3306/online_shopping_application?createDatabaseIfNotExist=true
+    username: root
+    password: root
+  jpa:
+    hibernate:
+      ddl-auto: update
+    show-sql: true
+    properties:
+      hibernate:
+ #       dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true    
+ #smtp configuration
+  mail:
+   host: smtp.gmail.com
+   username: ${mail.username} 
+   password: ${mail.password}
+   properties:
+    mail:
+     smtp:
+      starttls:
+        enable: true
+        required: true
+        port: 587        
+          
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
+        
