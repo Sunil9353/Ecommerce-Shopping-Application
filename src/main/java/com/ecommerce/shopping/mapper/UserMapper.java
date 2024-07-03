@@ -1,18 +1,24 @@
 package com.ecommerce.shopping.mapper;
 
+import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Component;
 
 import com.ecommerce.shopping.entity.User;
 import com.ecommerce.shopping.requestdto.UserRequest;
 import com.ecommerce.shopping.responsedto.UserResponse;
 
+import lombok.AllArgsConstructor;
+
 @Component
+@AllArgsConstructor
 public class UserMapper {
+	
+	private PasswordEncoder passwordEncoder;
 	
 	public User mapToUserRequest(UserRequest userRequest,User user) {
 		
 		user.setEmail(userRequest.getEmail());
-		user.setPassword(userRequest.getPassword());
+		user.setPassword(passwordEncoder.encode(userRequest.getPassword()));
 		
 		return user;
 		

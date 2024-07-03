@@ -15,6 +15,7 @@ spring:
  #smtp configuration
   mail:
    host: smtp.gmail.com
+   port: 587 
    username: ${mail.username} 
    password: ${mail.password}
    properties:
@@ -22,11 +23,20 @@ spring:
      smtp:
       starttls:
         enable: true
-        required: true
-        port: 587        
+        required: true       
           
-        
-        
+#this is values of the cookies and jwt properties for the accessToke & refreshToken 
+#application configuration file     
+application:
+   jwt:
+      secret: ${jwt.secret}
+      access_expiry_seconds: 3600
+      refresh_expiry_seconds: 1296000
+   cookie:
+      domain: localhost
+      same_site: Lax
+      secure: false
+                
         
         
         

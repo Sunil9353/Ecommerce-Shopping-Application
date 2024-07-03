@@ -5,6 +5,7 @@ import org.springframework.stereotype.Component;
 
 import jakarta.persistence.Entity;
 import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
@@ -14,6 +15,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @Component
 @NoArgsConstructor
+@Builder
 public class MessageData {
 	
 	private String to ;
